@@ -9,9 +9,9 @@ import Alerts from './modules/alerts/Alerts';
 import Tuning from './modules/rules/Rules';
 import IncidentResponse from './modules/incidents/Incidents';
 import MITREATTACK from './modules/mitre/MitreMatrix';
+import Troubleshooting from './modules/troubleshooting/Troubleshooting';
 const Integrations = () => <div className="p-8"><h1>Integrations WIP</h1></div>;
 const Reports = () => <div className="p-8"><h1>Reports WIP</h1></div>;
-const Troubleshooting = () => <div className="p-8"><h1>Troubleshooting WIP</h1></div>;
 
 const NavItem = ({ to, icon: Icon, label, active }) => (
   <Link 
