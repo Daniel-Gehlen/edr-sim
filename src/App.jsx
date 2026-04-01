@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { Shield, Activity, Bell, Settings, BarChart2, Monitor, AlertTriangle, ShieldCheck, HelpCircle, FileText, ChevronRight, Menu, X, CloudLightning } from 'lucide-react';
 import { StorageService } from './services/storage';
 
-// Module placeholders
-const Dashboard = () => <div className="p-8"><h1>Dashboard WIP</h1></div>;
+import Dashboard from './modules/dashboard/Dashboard';
 const Endpoints = () => <div className="p-8"><h1>Endpoints WIP</h1></div>;
 const Alerts = () => <div className="p-8"><h1>Alerts WIP</h1></div>;
 const Tuning = () => <div className="p-8"><h1>Tuning WIP</h1></div>;
