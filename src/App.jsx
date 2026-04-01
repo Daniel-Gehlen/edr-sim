@@ -6,7 +6,7 @@ import { StorageService } from './services/storage';
 import Dashboard from './modules/dashboard/Dashboard';
 import Endpoints from './modules/endpoints/Endpoints';
 import Alerts from './modules/alerts/Alerts';
-const Tuning = () => <div className="p-8"><h1>Tuning WIP</h1></div>;
+import Tuning from './modules/rules/Rules';
 const IncidentResponse = () => <div className="p-8"><h1>IR WIP</h1></div>;
 const MITREATTACK = () => <div className="p-8"><h1>MITRE Matrix WIP</h1></div>;
 const Integrations = () => <div className="p-8"><h1>Integrations WIP</h1></div>;
