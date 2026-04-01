@@ -1,0 +1,7 @@
+
+> edr-sim@0.0.0 build
+> vite build
+
+vite v8.0.3 building client environment for production...
+[2Ktransforming...✓ 2614 modules transformed.
+rendering chunks...

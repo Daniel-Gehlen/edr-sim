@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StorageService } from '../../services/storage';
-import { Search, Plus, Filter, Settings2, ShieldCheck, ShieldAlert, Cpu, Eye, EyeOff, BarChart3, ListFilter, Trash2, Edit3, X, Check } from 'lucide-react';
+import { Search, Plus, Filter, Settings2, ShieldCheck, ShieldAlert, Cpu, Eye, EyeOff, BarChart, ListFilter, Trash2, Edit3, X, Check, Sliders } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Rules = () => {
@@ -101,7 +101,7 @@ const Rules = () => {
            <div className="card-premium p-6 overflow-hidden relative">
               <div className="flex items-center justify-between mb-6">
                  <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Tuning Impact</h3>
-                 <BarChart3 className="w-4 h-4 text-indigo-500" />
+                 <BarChart className="w-4 h-4 text-indigo-500" />
               </div>
               <div className="space-y-4">
                  <div>

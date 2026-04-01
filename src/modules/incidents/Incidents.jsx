@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StorageService } from '../../services/storage';
-import { Shield, ShieldAlert, Cpu, Terminal, Play, CheckCircle2, AlertCircle, Clock, Trash2, Database, Network, UserX, Ghost, Loader2, ChevronRight, History } from 'lucide-react';
+import { Shield, ShieldAlert, Cpu, Terminal, Play, CircleCheck, CircleAlert, Clock, Trash2, Database, Network, UserX, Ghost, Loader2, ChevronRight, History, RefreshCcw, ListFilter } from 'lucide-react';
 
 const PlaybookStep = ({ step, status }) => (
   <div className="flex items-center gap-3 py-2 border-l-2 ml-2 pl-4 border-slate-800 relative">
@@ -8,7 +8,7 @@ const PlaybookStep = ({ step, status }) => (
       status === 'completed' ? 'bg-emerald-500 border-emerald-500' : 
       status === 'running' ? 'bg-indigo-500 animate-pulse border-indigo-500' : 'bg-slate-800 border-slate-700'
     }`}>
-      {status === 'completed' && <CheckCircle2 className="w-3 h-3 text-white" />}
+      {status === 'completed' && <CircleCheck className="w-3 h-3 text-white" />}
     </div>
     <div className="flex-1">
       <p className={`text-xs font-bold ${status === 'completed' ? 'text-emerald-500' : status === 'running' ? 'text-indigo-400' : 'text-slate-500'}`}>
@@ -193,7 +193,7 @@ const Incidents = () => {
                         )}
                         {!isRunning && logs.length > 0 && (
                           <div className="mt-4 p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 rounded flex items-center gap-2">
-                             <CheckCircle2 className="w-4 h-4" /> ALL STEPS COMPLETED
+                             <CircleCheck className="w-4 h-4" /> ALL STEPS COMPLETED
                           </div>
                         )}
                      </div>

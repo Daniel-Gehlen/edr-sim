@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { StorageService } from '../../services/storage';
 import { MITRE_TECHNIQUES } from '../../data/mockData';
-import { Target, Info, Shield, ExternalLink, X, AlertCircle } from 'lucide-react';
+import { Target, Info, Shield, ExternalLink, X, CircleAlert } from 'lucide-react';
 
 const TACTICS = [
   'Initial Access', 'Execution', 'Persistence', 'Privilege Escalation', 
@@ -77,7 +77,7 @@ const MitreMatrix = () => {
                        >
                           <div className="flex items-center justify-between gap-2">
                              <span className="truncate">{tech.name}</span>
-                             {isDetected && <AlertCircle className="w-3 h-3 text-rose-500 shrink-0" />}
+                             {isDetected && <CircleAlert className="w-3 h-3 text-rose-500 shrink-0" />}
                           </div>
                           <div className="mt-1 flex items-center justify-between">
                              <span className="text-[8px] opacity-40 font-bold">{tech.id}</span>
@@ -134,7 +134,7 @@ const MitreMatrix = () => {
                     </div>
                     <div className="space-y-4">
                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                          <AlertCircle className="w-4 h-4 text-rose-500" /> Detections
+                          <CircleAlert className="w-4 h-4 text-rose-500" /> Detections
                        </h4>
                        <div className="p-3 bg-slate-950 rounded-xl border border-slate-800">
                           <p className="text-[10px] text-slate-500 mb-1 font-bold">SIGMA RULE STATUS</p>

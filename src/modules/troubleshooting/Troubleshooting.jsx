@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { StorageService } from '../../services/storage';
-import { AlertCircle, CheckCircle, HelpCircle, Activity, ShieldAlert, Cpu, HardDrive, Network, RefreshCw, Zap, Bug, Download, MessageCircleCode } from 'lucide-react';
+import { CircleAlert, CircleCheck, CircleHelp, Activity, ShieldAlert, Cpu, HardDrive, Network, RefreshCw, Zap, Bug, Download, MessageCircleCode } from 'lucide-react';
 
 const HealthIndicator = ({ label, status, detail }) => (
   <div className="card-premium p-5 flex items-start gap-4">
@@ -9,7 +9,7 @@ const HealthIndicator = ({ label, status, detail }) => (
       status === 'warning' ? 'bg-amber-500/10 text-amber-500 border-amber-500/20' : 
       'bg-rose-500/10 text-rose-500 border-rose-500/20'
     }`}>
-      {status === 'healthy' ? <CheckCircle className="w-5 h-5" /> : <AlertCircle className="w-5 h-5" />}
+      {status === 'healthy' ? <CircleCheck className="w-5 h-5" /> : <CircleAlert className="w-5 h-5" />}
     </div>
     <div className="flex-1">
       <div className="flex items-center justify-between">

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { StorageService } from '../../services/storage';
 import { MITRE_TECHNIQUES } from '../../data/mockData';
-import { Search, Filter, AlertCircle, Clock, Shield, Target, FileCode, HardDrive, Network, User, ChevronRight, X, Terminal, Trash2, Sliders, CheckCircle2 } from 'lucide-react';
+import { Search, Filter, CircleAlert, Clock, Shield, Target, FileCode, HardDrive, Network, User, ChevronRight, X, Terminal, Trash2, Sliders, CircleCheck } from 'lucide-react';
 import { format } from 'date-fns';
 
 const SeverityBadge = ({ severity }) => {
@@ -115,7 +115,7 @@ const Alerts = () => {
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
                     selectedAlert.severity === 'critical' ? 'bg-rose-500/20 text-rose-500' : 'bg-indigo-500/20 text-indigo-500'
                   }`}>
-                    <AlertCircle className="w-6 h-6" />
+                    <CircleAlert className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white">{selectedAlert.severity.toUpperCase()} ALERT</h3>
@@ -202,7 +202,7 @@ const Alerts = () => {
                 onClick={() => handleUpdateStatus(selectedAlert.id, 'closed')}
                 className="flex-1 px-4 py-2 bg-emerald-600/10 border border-emerald-500/20 text-emerald-500 rounded-lg text-xs font-bold hover:bg-emerald-600/20 transition-all flex items-center justify-center gap-2"
                >
-                 <CheckCircle2 className="w-4 h-4" /> CLOSE ALERT
+                 <CircleCheck className="w-4 h-4" /> CLOSE ALERT
                </button>
                <button className="flex-1 px-4 py-2 bg-rose-600/10 border border-rose-500/20 text-rose-500 rounded-lg text-xs font-bold hover:bg-rose-600/20 transition-all flex items-center justify-center gap-2">
                  <Shield className="w-4 h-4" /> ISOLATE

@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { StorageService } from '../../services/storage';
-import { Search, Filter, Monitor, MoreVertical, Shield, Power, Wifi, WifiOff, AlertTriangle, CheckCircle, RefreshCcw, FileSearch, HardDrive, ShieldOff } from 'lucide-react';
+import { Search, Filter, Monitor, MoreVertical, Shield, Power, Wifi, WifiOff, TriangleAlert, CircleCheck, RefreshCcw, FileSearch, HardDrive, ShieldOff } from 'lucide-react';
 
 const StatusBadge = ({ status }) => {
   const configs = {
     online: { label: 'Online', icon: Wifi, className: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' },
     offline: { label: 'Offline', icon: WifiOff, className: 'bg-slate-500/10 text-slate-500 border-slate-500/20' },
-    problem: { label: 'Trouble', icon: AlertTriangle, className: 'bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_8px_rgba(244,63,94,0.3)]' },
+    problem: { label: 'Trouble', icon: TriangleAlert, className: 'bg-rose-500/10 text-rose-500 border-rose-500/20 shadow-[0_0_8px_rgba(244,63,94,0.3)]' },
     isolated: { label: 'Isolated', icon: ShieldOff, className: 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20' },
   };
   const config = configs[status] || configs.offline;

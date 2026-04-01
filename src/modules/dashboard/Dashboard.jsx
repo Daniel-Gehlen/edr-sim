@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie } from 'recharts';
 import { StorageService } from '../../services/storage';
-import { Shield, AlertCircle, Monitor, CheckCircle, Clock } from 'lucide-react';
+import { Shield, CircleAlert, Monitor, CircleCheck, Clock, Activity } from 'lucide-react';
 
 const StatCard = ({ title, value, icon: Icon, color, trend }) => (
   <div className="card-premium p-6 flex flex-col gap-4 relative overflow-hidden group">
@@ -71,9 +71,9 @@ const Dashboard = () => {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <StatCard title="Endpoints" value={stats.totalEndpoints} icon={Monitor} color="bg-slate-500" />
-        <StatCard title="Critical Alerts" value={stats.criticalAlerts} icon={AlertCircle} color="bg-rose-500" trend={12} />
-        <StatCard title="High Risk" value={stats.highAlerts} icon={AlertCircle} color="bg-orange-500" trend={-5} />
-        <StatCard title="Medium Risk" value={stats.mediumAlerts} icon={AlertCircle} color="bg-amber-500" />
+        <StatCard title="Critical Alerts" value={stats.criticalAlerts} icon={CircleAlert} color="bg-rose-500" trend={12} />
+        <StatCard title="High Risk" value={stats.highAlerts} icon={CircleAlert} color="bg-orange-500" trend={-5} />
+        <StatCard title="Medium Risk" value={stats.mediumAlerts} icon={CircleAlert} color="bg-amber-500" />
         <StatCard title="Offline Agents" value={stats.offlineEndpoints} icon={Clock} color="bg-slate-400" />
       </div>
 
@@ -145,7 +145,7 @@ const Dashboard = () => {
         </div>
         <div className="card-premium p-5 flex items-center gap-5">
            <div className="p-4 bg-emerald-500/10 rounded-2xl flex items-center justify-center">
-              <CheckCircle className="w-8 h-8 text-emerald-500" />
+              <CircleCheck className="w-8 h-8 text-emerald-500" />
            </div>
            <div>
               <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">SIEM Integration</p>

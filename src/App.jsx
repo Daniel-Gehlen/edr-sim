@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Shield, Activity, Bell, Settings, BarChart2, Monitor, AlertTriangle, ShieldCheck, HelpCircle, FileText, ChevronRight, Menu, X, CloudLightning } from 'lucide-react';
-import { StorageService } from './services/storage';
+import { Shield, Activity, Bell, Settings, BarChart, Monitor, CircleHelp, FileText, ChevronRight, Menu, ShieldCheck, CloudLightning } from 'lucide-react';
+import { Joyride } from 'react-joyride';
 
 import Dashboard from './modules/dashboard/Dashboard';
 import Endpoints from './modules/endpoints/Endpoints';
@@ -10,8 +10,8 @@ import Tuning from './modules/rules/Rules';
 import IncidentResponse from './modules/incidents/Incidents';
 import MITREATTACK from './modules/mitre/MitreMatrix';
 import Troubleshooting from './modules/troubleshooting/Troubleshooting';
-const Integrations = () => <div className="p-8"><h1>Integrations WIP</h1></div>;
-const Reports = () => <div className="p-8"><h1>Reports WIP</h1></div>;
+import Reports from './modules/reports/Reports';
+import Integrations from './modules/integrations/Integrations';
 
 const NavItem = ({ to, icon: Icon, label, active }) => (
   <Link 
@@ -30,25 +30,49 @@ const NavItem = ({ to, icon: Icon, label, active }) => (
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const location = useLocation();
+  const [runTour, setRunTour] = useState(true);
+
+  const tourSteps = [
+    { target: '.logo-area', content: 'Welcome to EDR-SIM! This platform simulates a real corporate Endpoint Protection solution.', placement: 'right' },
+    { target: 'nav', content: 'Here you can access all modules: Alerts, Endpoints, MITRE Matrix, Incidents, and more.', placement: 'right' },
+    { target: '.status-header', content: 'Monitor system health and critical alerts in real-time from the header.', placement: 'left' },
+    { target: '.card-premium', content: 'Each module provides high-fidelity simulations. Start by investigating an alert or isolating an endpoint!', placement: 'bottom' },
+  ];
 
   const navLinks = [
-    { to: '/', icon: BarChart2, label: 'Dashboard' },
+    { to: '/', icon: BarChart, label: 'Dashboard' },
     { to: '/alerts', icon: Bell, label: 'Alerts' },
     { to: '/endpoints', icon: Monitor, label: 'Endpoints' },
     { to: '/incidents', icon: Shield, label: 'Incidents' },
     { to: '/mitre', icon: Activity, label: 'MITRE ATT&CK' },
     { to: '/tuning', icon: Settings, label: 'Tuning' },
-    { to: '/troubleshooting', icon: HelpCircle, label: 'Health Check' },
+    { to: '/troubleshooting', icon: CircleHelp, label: 'Health Check' },
     { to: '/reports', icon: FileText, label: 'Reports' },
     { to: '/integrations', icon: CloudLightning, label: 'Integrations' },
   ];
 
   return (
     <div className="flex h-screen bg-slate-950 text-slate-100 overflow-hidden font-sans">
+      <Joyride 
+        steps={tourSteps} 
+        run={runTour} 
+        continuous 
+        showProgress 
+        showSkipButton 
+        styles={{
+          options: {
+            primaryColor: '#6366f1',
+            backgroundColor: '#0f172a',
+            textColor: '#f1f5f9',
+            arrowColor: '#0f172a',
+          }
+        }}
+      />
+
       {/* Sidebar */}
       <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 transition-transform duration-300 lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex flex-col h-full">
-          <div className="p-6 flex items-center gap-3">
+          <div className="p-6 flex items-center gap-3 logo-area">
             <div className="p-2 bg-indigo-500 rounded-lg shadow-lg shadow-indigo-500/20 ring-1 ring-indigo-400">
               <ShieldCheck className="w-6 h-6 text-white" />
             </div>
@@ -94,7 +118,7 @@ const App = () => {
             </div>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 status-header">
              <div className="hidden md:flex items-center gap-4 text-xs font-semibold bg-slate-950 px-4 py-2 rounded-full border border-slate-800">
                 <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]"></span> 12 CRITICAL</div>
                 <div className="w-[1px] h-3 bg-slate-800"></div>
@@ -105,7 +129,6 @@ const App = () => {
                <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-indigo-500 rounded-full border-2 border-slate-900"></span>
              </button>
              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 ring-2 ring-slate-800 shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform">
-                {/* User Initials or Avatar */}
                 <div className="w-full h-full flex items-center justify-center font-bold text-xs">AG</div>
              </div>
           </div>
