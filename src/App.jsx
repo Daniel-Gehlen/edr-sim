@@ -8,7 +8,7 @@ import Endpoints from './modules/endpoints/Endpoints';
 import Alerts from './modules/alerts/Alerts';
 import Tuning from './modules/rules/Rules';
 import IncidentResponse from './modules/incidents/Incidents';
-const MITREATTACK = () => <div className="p-8"><h1>MITRE Matrix WIP</h1></div>;
+import MITREATTACK from './modules/mitre/MitreMatrix';
 const Integrations = () => <div className="p-8"><h1>Integrations WIP</h1></div>;
 const Reports = () => <div className="p-8"><h1>Reports WIP</h1></div>;
 const Troubleshooting = () => <div className="p-8"><h1>Troubleshooting WIP</h1></div>;
