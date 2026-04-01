@@ -4,7 +4,7 @@ import { Shield, Activity, Bell, Settings, BarChart2, Monitor, AlertTriangle, Sh
 import { StorageService } from './services/storage';
 
 import Dashboard from './modules/dashboard/Dashboard';
-const Endpoints = () => <div className="p-8"><h1>Endpoints WIP</h1></div>;
+import Endpoints from './modules/endpoints/Endpoints';
 const Alerts = () => <div className="p-8"><h1>Alerts WIP</h1></div>;
 const Tuning = () => <div className="p-8"><h1>Tuning WIP</h1></div>;
 const IncidentResponse = () => <div className="p-8"><h1>IR WIP</h1></div>;
